@@ -23,11 +23,15 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "prefer-const": "error",
-    "no-trailing-spaces": "error",
-    "no-multiple-empty-lines": ["error", { "max": 1 }],
-    "linebreak-style": ["error", "unix"],
-    "react/prop-types": "off"  // Disable prop-types rule
+    "prefer-const": "error",  // Enforce the use of const for variables that are never reassigned after declared
+    "no-trailing-spaces": "error",  // Disallow trailing whitespace at the end of lines
+    "no-multiple-empty-lines": ["error", { "max": 1 }],  // Disallow multiple empty lines, allowing only one
+    "linebreak-style": ["error", "unix"],  // Enforce Unix linebreak style (\n) over Windows style (\r\n)
+    "react/prop-types": "off",  // Disable the rule that requires type checking for React props with PropTypes
+    "react/no-unknown-property": "off",  // Disable the rule that prevents using unknown DOM properties in JSX
+    "@typescript-eslint/no-unused-vars": "off",  // Disable the rule that flags variables declared but not used in the code
+    "react/no-unescaped-entities": "off",  // Disable the rule that flags unescaped entities in JSX, such as " and '
+    "react/react-in-jsx-scope": "off"  // Disable the rule that requires React to be in scope when using JSX
   },
   "settings": {
     "react": {
