@@ -170,7 +170,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
             // Set Override and clear out selected
             setVariables({
                 ...variables,
-                email: [],
+                email: '',
                 overrides: {
                     ...variables.overrides,
                     email: selectedOption.target.value
@@ -720,6 +720,7 @@ Editor.propTypes = {
                 target: PropTypes.object,
             }),
             PropTypes.object,
+            PropTypes.string,
         ]),
         phone: PropTypes.oneOfType([
             PropTypes.shape({
