@@ -1,5 +1,7 @@
-import styles from './Header.module.scss'
-import Logo from './Logo'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Header.module.scss';
+import Logo from './Logo';
 
 const Header = () => {
     return (
@@ -8,7 +10,12 @@ const Header = () => {
                 <Logo />
             </div>
         </div>
-    )
+    );
 }
 
-export default Header
+Header.propTypes = {
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+};
+
+export default Header;

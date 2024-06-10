@@ -1,6 +1,6 @@
 // components/ImagePicker.js
 import React from 'react'
-// import Image from 'next/image'
+import PropTypes from 'prop-types';
 import styles from './imagePicker.module.scss'
 
 const ImagePicker = ({ images, onPick }) => {
@@ -23,5 +23,14 @@ const ImagePicker = ({ images, onPick }) => {
         </div>
     )
 }
+
+ImagePicker.propTypes = {
+    images: PropTypes.arrayOf(
+        PropTypes.shape({
+            src: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    onPick: PropTypes.func.isRequired,
+};
 
 export default ImagePicker

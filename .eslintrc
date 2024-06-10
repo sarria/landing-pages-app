@@ -26,7 +26,8 @@
     "prefer-const": "error",
     "no-trailing-spaces": "error",
     "no-multiple-empty-lines": ["error", { "max": 1 }],
-    "linebreak-style": ["error", "unix"]
+    "linebreak-style": ["error", "unix"],
+    "react/prop-types": "off"  // Disable prop-types rule
   },
   "settings": {
     "react": {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types';
 import styles from './error.module.scss'
 import MyModal from './Modal' // Import the custom Modal
 
@@ -46,5 +47,19 @@ const Error = ({ error, runScrape, runAnalysis }) => {
         </>
     )
 }
+
+Error.propTypes = {
+    error: PropTypes.shape({
+        scrape: PropTypes.shape({
+            message: PropTypes.string,
+        }),
+        chatgpt: PropTypes.shape({
+            message: PropTypes.string,
+            debug: PropTypes.string,
+        }),
+    }).isRequired,
+    runScrape: PropTypes.func.isRequired,
+    runAnalysis: PropTypes.func.isRequired,
+};
 
 export default Error

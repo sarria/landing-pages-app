@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import formStyles from '../styles/form.module.scss'
 import styles from './generator.module.scss'
 import { LoadingGenerator } from './Loaders'
@@ -173,3 +174,38 @@ export default function Generator({ handleGenerate, data, setData, variables, se
         </div>
     )
 }
+
+Generator.propTypes = {
+    handleGenerate: PropTypes.func.isRequired,
+    data: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+    }).isRequired,
+    setData: PropTypes.func.isRequired,
+    variables: PropTypes.shape({
+        overrides: PropTypes.shape({
+            audience: PropTypes.string,
+            vertical: PropTypes.string,
+        }).isRequired,
+        selectDefaults: PropTypes.shape({
+            audience: PropTypes.object,
+            vertical: PropTypes.object,
+        }).isRequired,
+        loadingOptions: PropTypes.bool.isRequired,
+        options: PropTypes.shape({
+            objectives: PropTypes.arrayOf(PropTypes.object).isRequired,
+            audience: PropTypes.arrayOf(PropTypes.object).isRequired,
+            vertical: PropTypes.arrayOf(PropTypes.object).isRequired,
+        }).isRequired,
+        objectives: PropTypes.arrayOf(PropTypes.object).isRequired,
+        audience: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.arrayOf(PropTypes.object)
+        ]).isRequired,
+        vertical: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.arrayOf(PropTypes.object)
+        ]).isRequired,
+    }).isRequired,
+    setVariables: PropTypes.func.isRequired,
+    disabledBtns: PropTypes.bool.isRequired,
+};

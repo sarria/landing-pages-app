@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types';
 import ImagePicker from './ImagePicker'
 import styles from './imageSelector.module.scss'
 import '../utils/imagePicker.css'
@@ -36,3 +37,16 @@ export default function ImageSelector({ image, imageList, onChange, name, sectio
         </div>
     )
 }
+
+ImageSelector.propTypes = {
+    image: PropTypes.string.isRequired,
+    imageList: PropTypes.arrayOf(
+        PropTypes.shape({
+            src: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    onChange: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
+    section: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    component: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};

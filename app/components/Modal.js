@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 
 const customStyles = {
@@ -34,5 +35,12 @@ const MyModal = ({ isOpen, onRequestClose, contentLabel, children }) => {
         </Modal>
     )
 }
+
+MyModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    onRequestClose: PropTypes.func.isRequired,
+    contentLabel: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+};
 
 export default MyModal

@@ -43,7 +43,6 @@ export default function ColorPicker({ colorKey, color, colors, onChange }) {
     )
 }
 
-// Add prop types validation
 ColorPicker.propTypes = {
     colorKey: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
