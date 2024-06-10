@@ -34,8 +34,8 @@ export const handleScrape = async (url, setData, setVariables) => {
                     ],
                     emails: [
                         ...scrapedData.emails.map(item => ({ value: item, label: item })),
-                        // { value: 'test1@example.com', label: 'test1@example.com' },
-                        // { value: 'test2@exampleofafakeemail.com', label: 'test2@exampleofafakeemail.com' }
+                        { value: 'test1@example.com', label: 'test1@example.com' },
+                        { value: 'test2@exampleofafakeemail.com', label: 'test2@exampleofafakeemail.com' }
                     ]
                 }
 

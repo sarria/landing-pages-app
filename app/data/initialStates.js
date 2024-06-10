@@ -12,8 +12,8 @@ export const initialVariablesState = {
     objectives: [],
     audience: [],
     vertical: [],
-    phone: '',
-    email: '',
+    phone: {},
+    email: {},
     overrides: {
         audience: '',
         vertical: '',

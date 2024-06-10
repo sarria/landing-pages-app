@@ -170,7 +170,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
             // Set Override and clear out selected
             setVariables({
                 ...variables,
-                email: '',
+                email: {},
                 overrides: {
                     ...variables.overrides,
                     email: selectedOption.target.value
@@ -204,7 +204,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
             // Set Override and clear out selected
             setVariables({
                 ...variables,
-                phone: [],
+                phone: {},
                 overrides: {
                     ...variables.overrides,
                     phone: selectedOption.target.value
@@ -649,90 +649,89 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
     )
 }
 
-Editor.propTypes = {
-    handleCreate: PropTypes.func.isRequired,
-    data: PropTypes.shape({
-        logo: PropTypes.string,
-        colors: PropTypes.shape({
-            primary: PropTypes.string,
-            accent: PropTypes.string,
-            tertiary: PropTypes.string,
-            headerBackground: PropTypes.string,
-            footerText: PropTypes.string,
-            footerBackground: PropTypes.string,
-        }),
-        socials: PropTypes.arrayOf(PropTypes.string),
-        page: PropTypes.shape({
-            sections: PropTypes.arrayOf(PropTypes.shape({
-                headline: PropTypes.string,
-                subheader: PropTypes.string,
-                ctaText: PropTypes.string,
-                ctaLink: PropTypes.string,
-                desc: PropTypes.string,
-                descSize: PropTypes.string,
-                desc2: PropTypes.string,
-                desc2Size: PropTypes.string,
-                image: PropTypes.string,
-                components: PropTypes.arrayOf(PropTypes.shape({
-                    image: PropTypes.string,
-                    videoUrl: PropTypes.string,
-                })),
-            })),
-        }),
-        customComponents: PropTypes.arrayOf(PropTypes.shape({
-            apiKey: PropTypes.string,
-        })),
-    }).isRequired,
-    setData: PropTypes.func.isRequired,
-    variables: PropTypes.shape({
-        scrapedData: PropTypes.shape({
-            styles: PropTypes.shape({
-                colors: PropTypes.arrayOf(PropTypes.shape({
-                    key: PropTypes.string,
-                })),
-                backgroundColors: PropTypes.arrayOf(PropTypes.shape({
-                    key: PropTypes.string,
-                })),
-                backgroundImages: PropTypes.arrayOf(PropTypes.shape({
-                    url: PropTypes.string,
-                    key: PropTypes.string,
-                })),
-            }),
-            images: PropTypes.arrayOf(PropTypes.shape({
-                url: PropTypes.string,
-                key: PropTypes.string,
-            })),
-        }),
-        options: PropTypes.shape({
-            emails: PropTypes.arrayOf(PropTypes.shape({
-                value: PropTypes.string,
-            })),
-            phones: PropTypes.arrayOf(PropTypes.shape({
-                value: PropTypes.string,
-            })),
-        }),
-        scraping: PropTypes.bool,
-        analyzing: PropTypes.bool,
-        creating: PropTypes.bool,
-        email: PropTypes.oneOfType([
-            PropTypes.shape({
-                value: PropTypes.string,
-                target: PropTypes.object,
-            }),
-            PropTypes.object,
-            PropTypes.string,
-        ]),
-        phone: PropTypes.oneOfType([
-            PropTypes.shape({
-                value: PropTypes.string,
-                target: PropTypes.object,
-            }),
-            PropTypes.object,
-        ]),
-        overrides: PropTypes.shape({
-            email: PropTypes.string,
-            phone: PropTypes.string,
-        }),
-    }).isRequired,
-    setVariables: PropTypes.func.isRequired,
-};
+// Editor.propTypes = {
+//     handleCreate: PropTypes.func.isRequired,
+//     data: PropTypes.shape({
+//         logo: PropTypes.string,
+//         colors: PropTypes.shape({
+//             primary: PropTypes.string,
+//             accent: PropTypes.string,
+//             tertiary: PropTypes.string,
+//             headerBackground: PropTypes.string,
+//             footerText: PropTypes.string,
+//             footerBackground: PropTypes.string,
+//         }),
+//         socials: PropTypes.arrayOf(PropTypes.string),
+//         page: PropTypes.shape({
+//             sections: PropTypes.arrayOf(PropTypes.shape({
+//                 headline: PropTypes.string,
+//                 subheader: PropTypes.string,
+//                 ctaText: PropTypes.string,
+//                 ctaLink: PropTypes.string,
+//                 desc: PropTypes.string,
+//                 descSize: PropTypes.string,
+//                 desc2: PropTypes.string,
+//                 desc2Size: PropTypes.string,
+//                 image: PropTypes.string,
+//                 components: PropTypes.arrayOf(PropTypes.shape({
+//                     image: PropTypes.string,
+//                     videoUrl: PropTypes.string,
+//                 })),
+//             })),
+//         }),
+//         customComponents: PropTypes.arrayOf(PropTypes.shape({
+//             apiKey: PropTypes.string,
+//         })),
+//     }).isRequired,
+//     setData: PropTypes.func.isRequired,
+//     variables: PropTypes.shape({
+//         scrapedData: PropTypes.shape({
+//             styles: PropTypes.shape({
+//                 colors: PropTypes.arrayOf(PropTypes.shape({
+//                     key: PropTypes.string,
+//                 })),
+//                 backgroundColors: PropTypes.arrayOf(PropTypes.shape({
+//                     key: PropTypes.string,
+//                 })),
+//                 backgroundImages: PropTypes.arrayOf(PropTypes.shape({
+//                     url: PropTypes.string,
+//                     key: PropTypes.string,
+//                 })),
+//             }),
+//             images: PropTypes.arrayOf(PropTypes.shape({
+//                 url: PropTypes.string,
+//                 key: PropTypes.string,
+//             })),
+//         }),
+//         options: PropTypes.shape({
+//             emails: PropTypes.arrayOf(PropTypes.shape({
+//                 value: PropTypes.string,
+//             })),
+//             phones: PropTypes.arrayOf(PropTypes.shape({
+//                 value: PropTypes.string,
+//             })),
+//         }),
+//         scraping: PropTypes.bool,
+//         analyzing: PropTypes.bool,
+//         creating: PropTypes.bool,
+//         email: PropTypes.oneOfType([
+//             PropTypes.shape({
+//                 value: PropTypes.string,
+//                 target: PropTypes.object,
+//             }),
+//             PropTypes.object,
+//         ]),
+//         phone: PropTypes.oneOfType([
+//             PropTypes.shape({
+//                 value: PropTypes.string,
+//                 target: PropTypes.object,
+//             }),
+//             PropTypes.object,
+//         ]),
+//         overrides: PropTypes.shape({
+//             email: PropTypes.string,
+//             phone: PropTypes.string,
+//         }),
+//     }).isRequired,
+//     setVariables: PropTypes.func.isRequired,
+// };
