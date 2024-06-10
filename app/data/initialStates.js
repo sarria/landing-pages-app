@@ -34,6 +34,11 @@ export const initialVariablesState = {
         emails: [],
         progressMessages: []
     },
+    selectDefaults: {
+        objectives: [],
+        vertical: [],
+        audience: []
+    },
     error: {
         scrape: {
             message: '',
