@@ -1,0 +1,50 @@
+@import '../styles/variables.scss';
+
+.root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .pair {
+        display: flex;
+        justify-content: space-between;
+
+        .pairLeft, .pairRight {
+            width: 48%;
+        }
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+
+        label {
+            color: $darkerGrey;
+            padding-bottom: 6px;
+
+            &.centered {
+                text-align: center;
+            }
+        }
+
+        select,
+        textarea,
+        input[type="url"],
+        input[type="text"] {
+            border: solid 1px $mediumGrey;
+            background-color: inherit;
+            border-radius: 6px;
+            padding: 8px 8px 8px 16px;
+            color: $black;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+    }
+}

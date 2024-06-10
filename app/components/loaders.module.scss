@@ -1,0 +1,108 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;    
+}
+.card {
+    width: 100%;
+    height: 60px;
+    background: #f3f3f3;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0px;
+
+    &.label {
+        width: 30%;
+        height: 19px;
+        margin-bottom: 6px;
+    }
+
+    &.centered {
+        align-self: center;
+    }
+
+    &.input {
+        height: 39px;
+        margin-bottom: 0px;
+    }
+
+    &.textarea {
+        height: 150px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to right, #f3f3f3 0%, #e0e0e0 50%, #f3f3f3 100%);
+        animation: loading 1.5s infinite;
+    }
+
+    &.image {
+        height: 250px;        
+    }
+   
+}
+
+.generator {
+    .card {
+        align-self: center;
+    }
+}
+
+.social {
+    .label {
+        display: none;
+    }
+}
+
+.twoCols {
+    display: flex;
+
+    > div {
+        flex-grow: 1;
+        margin-left: 20px;
+    }
+
+    .label {
+        width: 50%;
+    }    
+}
+
+.top {
+    .twoCols {
+        padding-top: 20px;
+    }
+}
+
+// .middle {
+//     .textarea {
+//         .input {
+//             height: 118px;
+//         }
+//     }
+// }
+
+.colors {
+    .label {
+        width: 100%;
+    }
+}
+
+
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}

@@ -1,0 +1,35 @@
+@import '../styles/variables.scss';
+
+$stripe1: #AEAEAE;
+$stripe2: #878687;
+$fontColor: #FFFFFF;
+
+.root {
+    position: relative;
+    width: 100%;
+    background-color: $stripe1;
+    border-radius: 5px;
+    height: 30px;
+
+    .wrapper {
+        height: inherit;
+
+        &.off {
+            background-color: #FFFFFF;
+        }
+
+        .percentage {
+            height: inherit;
+            background-color: $stripe2;
+        }
+
+        .step {
+            height: inherit;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            color: $fontColor;
+            text-transform: uppercase;
+        }
+    }
+}

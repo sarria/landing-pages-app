@@ -1,0 +1,55 @@
+@import '../styles/variables.scss';
+
+.root {
+    position: relative;
+    
+    .wrapper {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-end;
+        
+        label {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            outline: none;
+            margin-right: 8px;
+            cursor: pointer;
+            position: relative;
+            
+            &:checked::before {
+                content: '';
+                display: block;
+                width: 12px;
+                height: 12px;
+                background-color: #007bff;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        input[type="radio"]:hover {
+            border-color: #888;
+        }
+        
+        input[type="radio"]:focus {
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+    }
+}

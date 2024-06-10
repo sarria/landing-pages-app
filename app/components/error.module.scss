@@ -1,0 +1,25 @@
+// @import '../styles/variables.scss';
+
+.root {
+    position: relative;
+    padding: 0 24px;
+    
+	.wrapper {
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        padding: 24px;
+
+        background-color: #af2424; // Warm red color
+        color: #fff; // White text color for contrast  
+        
+        .link {
+            text-decoration: underline;
+
+            &:hover {
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    }
+}

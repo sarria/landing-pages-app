@@ -1,0 +1,16 @@
+@import '../styles/variables.scss';
+
+.root {
+    position: relative;
+    padding: 0 36px;
+    
+	.wrapper {
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        Button {
+            flex-grow: 1;
+        }
+    }
+}

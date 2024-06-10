@@ -1,0 +1,26 @@
+@import '../styles/variables.scss';
+
+.root {
+	position: relative;
+  color: $MirageBlue500;
+
+	.wrapper {
+    display: flex;
+    align-items: baseline;
+    font-size: 48px;
+
+    div {
+      margin: 0 auto;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #4375CD 0%, #5790DA 30%, #57D2DA 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }  
+}

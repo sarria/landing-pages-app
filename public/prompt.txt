@@ -1,0 +1,104 @@
+You are a creative director specializing in online advertising.   Please generate the following landing page requirements based on the campaign objectives and requirements below in the specified JSON format based on this website [url]
+
+Campaign Objectives
+[objectives]
+
+Target Audience
+[audience]
+
+Business Vertical
+[vertical]
+
+Global SEO Requirements
+Title tag called "aiosp_home_title": max character length 60 characters
+Google verification code called "aiosp_google_verify": [google_verify]
+Description tag called "aiosp_home_description": max character length 150 characters
+
+Website Color Requirements
+Based on the previous analysis of the website provided now suggest the following colors in HEX #000000 format that would best represent this website's colors
+footerBackground - Hex value that is neutral and goes well with primary and accent colors
+footerText -Hex value with high contrast for text that appears on top of the footerBackground color
+
+Landing Page Requirements
+
+First Section Item requirements:
+headline:  max character length 26 characters
+ctaText: max character length 20 characters
+subheader: max character length 42 characters
+Components > type > coupon
+Components > type > form
+
+Second Section Item Requirements:
+headline:  max character length 26 characters
+descLessText:   at least 500 characters
+descMoreText:   at least 2000 characters
+descMaxText:   at least 6000 characters
+ctaText: max character length 20 characters
+subheader: max character length 42 characters
+desc2LessText:  at least 500 characters
+desc2MoreText:  at least 2000 characters
+desc2MaxText:  at least 6000 characters
+Components > type > video
+
+Third Section Item Requirements:
+headline:  max character length 26 characters
+ctaText: max character length 20 characters
+
+Specified JSON format
+Provide only an RFC8259 compliant JSON response following this format without any explanations or additional text.
+
+{
+    "siteName": "The website name",
+    "colors": {
+        "footerBackground": "HEX color code used for the footer background of the website",
+        "footerText": "HEX color code used for the footer font color on the website"
+    },    
+    "seo": {
+        "global": {
+            "aiosp_home_title": "seo text for Title tag requirements",
+            "aiosp_google_verify": "Google verification code provided",
+            "aiosp_home_description": "seo text for Description tag requirements",
+            "aiosp_page_title_format": "%page_title% | %blog_title%",
+            "aiosp_description_format": "%description%",
+            "aiosp_404_title_format": "Nothing found for %request_words%"
+        }
+    },
+    "page": {
+        "sections": [
+            {
+                "headline": "text for first section headline requirements",
+                "ctaText": "text for first section ctaText requirements",
+                "subheader": "text for first section subheader requirements",
+                "components": [
+                    {
+                        "type": "first component type provided for first section requirements"
+                    },
+                    {
+                        "type": "second component type provided for first section requirements"
+                    }
+                ]
+            },
+            {
+                "headline": "text for second section headline requirements",
+                "descLessText": "text for second section desc requirements",
+                "descMoreText": "text for second section desc requirements",
+                "descMaxText": "text for second section desc requirements",
+                "ctaText": "text for second section ctaText requirements",
+                "subheader": "text for second section subheader requirements",
+                "desc2LessText": "text for second section desc requirements",
+                "desc2MoreText": "text for second section desc requirements",
+                "desc2MaxText": "text for second section desc requirements",
+                "components": [
+                    {
+                        "type": "first component type provided for second section requirements",
+                        "videoUrl": "Leave this empty"
+                    }
+                ]
+            },
+            {
+                "headline": "text for third section headline requirements",
+                "ctaText": "text for third section ctaText requirements",
+            }
+        ]
+    }
+}

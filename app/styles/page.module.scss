@@ -1,0 +1,21 @@
+@import '../styles/variables.scss';
+
+.root {
+    // layout
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 36px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+
+	.wrapper {
+        // border: solid 1px $mediumGrey;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+        padding: 36px;
+        width: 80%;
+        max-width: 850px;
+    }
+}

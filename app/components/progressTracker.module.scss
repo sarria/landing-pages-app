@@ -1,0 +1,135 @@
+@import '../styles/variables.scss';
+
+$waiting-color: $mediumGrey;
+$running-color: $darkerGrey;
+$completed-color: $green;
+
+$checkBorderWidth: 3px;
+$checkHeight: 15px;
+$checkWidth: 6px;
+$checkBorderColor: white;
+
+@mixin loader($color: $running-color) {
+  width: 30px;
+  height: 30px;
+  border: 3px solid $color;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  
+  &:after {
+    content: '';  
+    position: absolute;
+    box-sizing: border-box;
+    left: 7px;
+    top: 19px;
+    border: 8px solid transparent;
+    border-right-color: $color;
+    transform: rotate(-40deg);
+  }
+}
+
+.root {
+  position: relative;
+  margin-bottom: 40px;
+  z-index: 0;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+
+    .point {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $waiting-color; 
+      border: 2px solid $waiting-color; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      text-align: center;
+      z-index: 1;
+      transition: all 0.3s ease;
+      margin-right: 150px;
+
+      &.last {
+        margin-right: 0;
+      }        
+
+      &:before {
+        content: attr(data-label); // Use data attribute for label
+        position: absolute;
+        color: $running-color;
+        bottom: -30px; // Position labels below the circles
+        text-align: center;
+      }
+
+      &:not(:last-child)::after {
+        content: " ";
+        position: absolute;
+        height: 2px;
+        width: 151px;
+        left: 31px;
+        background-color: $waiting-color;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.completed {
+        background-color: $completed-color; // Change color when completed
+        border-color: $completed-color; // Change border color to match
+        transform: scale(1.2); // Slightly larger when completed
+        cursor: pointer;
+
+        &:after {
+          background-color: $completed-color;
+          height: 4px;
+        }
+
+        &:hover {
+          background-color: $waiting-color; 
+          border: 2px solid $waiting-color;          
+          transform: scale(1);
+
+          .check {
+              // @include loader(30px, 3px, $running-color);
+              @include loader;
+              animation: undefined;
+          }
+        }
+      }
+
+      .loader {
+        @include loader;
+      }
+
+      .check {
+        display: inline-block;
+        transform: rotate(45deg);
+        height: $checkHeight;
+        width: $checkWidth;
+        border-bottom: $checkBorderWidth solid $checkBorderColor;
+        border-right: $checkBorderWidth solid $checkBorderColor;
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

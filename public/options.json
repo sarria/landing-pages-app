@@ -1,0 +1,38 @@
+{
+    "objectives": [
+        "Drive leads",
+        "Engagement",
+        "Lead generation",
+        "Sales"
+    ],
+    "vertical": [
+        "HVAC, Plumbing, Electric",        
+        "HVAC",
+        "Plumbing",
+        "Electrical",
+        "Roofing",
+        "Pest Control",
+        "Adventure Tourism"
+    ],
+    "audience": [
+        "Homeowners",        
+        "Adventure Enthusiasts",
+        "Budget-Conscious Travelers",
+        "Families and Groups",
+        "Nature Lovers",        
+        "Outdoor Enthusiasts"
+    ],
+    "progressMessages": [
+        "Starting Scraping Process...",
+        "Extracting Meta Tags...",
+        "Extracting CSS...",
+        "Extracting Images...",
+        "Scraping Completed!",
+        "Generating AI Content...",
+        "Processing Image and Color Assets...",
+        "Creating Web Components...",
+        "Generating Landing Page...",
+        "Landing Page Created!" 
+    ]
+}
+  

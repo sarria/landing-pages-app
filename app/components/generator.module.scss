@@ -1,0 +1,24 @@
+@import '../styles/variables.scss';
+
+.root {
+    position: relative;
+    padding: 0 24px 24px;
+    
+	.wrapper {
+        display: flex;
+        border: solid 1px $mediumGrey;
+        border-radius: 12px;
+        padding: 24px;
+
+        .generateBtn {
+            margin-top: 32px;
+            width: 250px;
+            text-wrap: nowrap;
+            align-self: center;
+        }
+
+        .loading {
+            margin-top: 10px;
+        }
+    }
+}

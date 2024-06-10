@@ -1,0 +1,21 @@
+@import '../styles/variables.scss';
+
+.root {
+    position: relative;
+    // layout
+    display: flex;
+    padding: 14px 24px;
+    align-items: center;
+    gap: 48px;    
+    // style
+    background: var(--tsi-color-slate-50, #F8FAFC);
+    box-shadow: -2px 0px 20px 0px rgba(0, 0, 0, 0.04), 2px 2px 20px 0px rgba(0, 0, 0, 0.05);
+	margin-bottom: 50px;
+
+	.wrapper {
+		height: 50px;
+        display: flex;
+
+
+    }
+}

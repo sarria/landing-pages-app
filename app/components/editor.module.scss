@@ -1,0 +1,72 @@
+@import '../styles/variables.scss';
+
+.root {
+    position: relative;
+    padding: 0 24px 24px;
+    
+	.wrapper {
+        display: flex;
+        border: solid 1px $mediumGrey;
+        border-radius: 12px;
+        padding: 24px;
+
+        .createLandingPageBtn {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-evenly;
+            // align-items: center;
+
+            > div {
+                flex-grow: 1;
+            }
+        }
+
+        .ColorPicker,
+        .imageEditor {
+            display: flex;
+            justify-content: center;
+        }
+
+        .rightInputs {
+            width: 40%;
+
+            // input[type="text"] {
+            //     width: 100%
+            // }
+        }
+
+        .socialLinksHeader {
+            display: flex;
+            align-items: center;
+
+            .addIco {
+                cursor: pointer;
+                margin-left: 20px;
+            }
+        }
+
+        .socialLinks {
+            padding-bottom: 30px;
+
+            .socialLink {
+                display: flex;
+                margin-bottom: 10px;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            input[type="text"] {
+                width: 90%
+            }
+
+            .deleteIco {
+                cursor: pointer;
+            }
+
+        }
+    }
+}

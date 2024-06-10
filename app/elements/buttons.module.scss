@@ -1,0 +1,118 @@
+@import '../styles/variables.scss';
+
+/*
+// Variables for colors and other styles
+$primary-bg-color: darken($lightGrey, 20%);
+$current-bg-color: $MirageBlue500;
+$disabled-bg-color: rgba(19, 26, 44, 0.25);
+$disabled-font-color: white;
+$hover-color: $MirageBlue300;
+$focus-color: lighten($primary-bg-color, 5%);
+$press-color: darken($primary-bg-color, 15%);
+
+// Mixin for button states
+@mixin button-style($bg-color, $text-color: white) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+        // background-color: $hover-color;
+    }
+    // &:focus {
+    //     background-color: $focus-color;
+    //     outline: none;
+    // }
+    // &:active {
+    //     background-color: $press-color;
+    // }
+    &:disabled {
+        background-color: $disabled-bg-color;
+        color: $disabled-font-color;
+        cursor: default;
+    }
+}
+
+.primaryButton {
+    @include button-style($primary-bg-color);
+}
+
+.currentButton {
+    @include button-style($current-bg-color);
+}
+
+// Styling for checkboxes
+.checkbox {
+    display: inline-block;
+    input[type="checkbox"] {
+        display: none;
+    }
+    label {
+        background-color: $primary-bg-color;
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 7px;
+            width: 6px;
+            height: 10px;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            display: none;
+        }
+    }
+    input[type="checkbox"]:checked + label {
+        background-color: $primary-bg-color;
+        &:before {
+            display: block;
+        }
+    }
+    input[type="checkbox"]:focus + label {
+        box-shadow: 0 0 3px $focus-color;
+    }
+    input[type="checkbox"]:hover + label {
+        background-color: $hover-color;
+    }
+    input[type="checkbox"]:disabled + label {
+        background-color: $disabled-bg-color;
+        cursor: default;
+    }
+}
+*/
+
+.tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    border-bottom: 5px solid transparent;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #5A9BEF; /* Slightly lighter blue for non-selected tabs */
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+
+    &.isCurrent {
+        background-color: $MirageBlue500; /* Active tab color */
+        border-bottom-color: $yellow; /* Gold color to indicate active tab */
+    }
+
+    &:disabled {
+        background-color: #B0C4DE; /* Deactivated tab color */
+        cursor: not-allowed;
+    }
+
+    &:hover:not(&:disabled ) {
+        background-color: #3A6FB0; /* Hover color */
+    }    
+}
