@@ -4,23 +4,28 @@
 	position: relative;
 
     .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        
         .imageBox {
-            padding: 5px;
-            background: #fff;
+            width: 30%;
             border: solid 1px $mediumGrey;
-            cursor: pointer;
+            padding: 10px;
+            flex-grow: 3;
 
             &:hover {
                 border: solid 1px $MirageBlue500;
-            }            
+            }
 
             .image {
-                width: 250px;
                 height: 250px;
                 background-size: contain;
                 background-repeat: no-repeat;
-                background-position: center;    
-            }
+                background-position: center;
+                cursor: pointer;
+            }            
         }
-    }
+        
+    }  
 }

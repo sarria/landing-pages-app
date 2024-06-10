@@ -31,6 +31,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
     const backgroundColors = variables.scrapedData?.styles.backgroundColors ? getColorKeys(variables.scrapedData.styles.backgroundColors) : []
     const colors = sortColorsByRGB([...textColors, ...backgroundColors])
     const imageList = variables.scrapedData ? [...variables.scrapedData.images, ...variables.scrapedData.styles.backgroundImages].map(image => image.url || image.key) : []
+    // console.log('imageList', imageList)
 
     function handleColorChange(colorKey, color) {
         setData({
@@ -48,6 +49,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
     // }
 
     function changeData(key, value) {
+        console.log(key, value)
         setData({
             ...data,
             [key]: value
@@ -330,7 +332,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
                     {!variables.scraping && (
                         <div className={styles.box}>
                             <div className={formStyles.field}>
-                                <label htmlFor="title">Primary</label>
+                                <label htmlFor="title" className={formStyles.centered}>Primary</label>
                                 <div className={styles.ColorPicker}>
                                     <ColorPicker
                                         colorKey='primary'
@@ -341,7 +343,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
                                 </div>
                             </div>
                             <div className={formStyles.field}>
-                                <label htmlFor="title">Accent</label>
+                                <label htmlFor="title" className={formStyles.centered}>Accent</label>
                                 <div className={styles.ColorPicker}>
                                     <ColorPicker
                                         colorKey='accent'
@@ -352,7 +354,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
                                 </div>
                             </div>
                             <div className={formStyles.field}>
-                                <label htmlFor="title">Tertiary</label>
+                                <label htmlFor="title" className={formStyles.centered}>Tertiary</label>
                                 <div className={styles.ColorPicker}>
                                     <ColorPicker
                                         colorKey='tertiary'
@@ -363,7 +365,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
                                 </div>
                             </div>
                             <div className={formStyles.field}>
-                                <label htmlFor="title">Header Background</label>
+                                <label htmlFor="title" className={formStyles.centered}>Header Background</label>
                                 <div className={styles.ColorPicker}>
                                     <ColorPicker
                                         colorKey='headerBackground'
@@ -374,7 +376,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
                                 </div>
                             </div>
                             <div className={formStyles.field}>
-                                <label htmlFor="title">Footer Text</label>
+                                <label htmlFor="title" className={formStyles.centered}>Footer Text</label>
                                 <div className={styles.ColorPicker}>
                                     <ColorPicker
                                         colorKey='footerText'
@@ -385,7 +387,7 @@ export default function Editor({handleCreate, data, setData, variables, setVaria
                                 </div>
                             </div>
                             <div className={formStyles.field}>
-                                <label htmlFor="title">Footer Background</label>
+                                <label htmlFor="title" className={formStyles.centered}>Footer Background</label>
                                 <div className={styles.ColorPicker}>
                                     <ColorPicker
                                         colorKey='footerBackground'

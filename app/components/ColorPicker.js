@@ -17,6 +17,7 @@ export default function ColorPicker({colorKey, color, colors, onChange}) {
 
     const handleChange = (color) => {
         onChange(colorKey, color.hex)
+        handleClose()
     }
 
     return (
@@ -25,7 +26,10 @@ export default function ColorPicker({colorKey, color, colors, onChange}) {
                 <div className={ styles.color } style={{backgroundColor: color }} />
             </div>
             { display ? <div className={ styles.popover }>
-                <div className={ styles.cover } onClick={ handleClose }/>
+                <div className={styles.btns}>
+                    <div className={ styles.close } onClick={ handleClose } >CLOSE</div>
+                    <div className={ styles.clear } onClick={ () => {handleChange({hex: ''});handleClose()} } >CLEAR</div>
+                </div>
                 <SketchPicker
                     color={ color }
                     presetColors={ colors }

@@ -280,7 +280,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             // sendStream(res, 'message', { step: 'Performing color analysis', percentage: 60 })
             const colorClusters = await colorAnalysis(page)
 
-            // await browser.close();
+            if (process.env.APP_ENV === 'local') {
+                console.log('Closing chrome')
+                await browser.close() // for some reason Vercel fails here
+            }
             // sendStream(res, 'message', { step: 'Scraping Completed!', percentage: 65 })
 
             const returnData = {

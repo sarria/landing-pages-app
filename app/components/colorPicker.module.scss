@@ -1,3 +1,5 @@
+@import '../styles/variables.scss';
+
 .color {
     width: 35px;
     height: 35px;
@@ -8,20 +10,38 @@
     padding: 5px;
     background: #fff;
     border-radius: 1px;
-    box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+    border: solid 1px $mediumGrey;
     display: inline-block;
     cursor: pointer;
+
+    &:hover {
+        border: solid 1px $MirageBlue500;
+    } 
 }
 
 .popover {
     position: absolute;
     z-index: 2;
-}
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(0, 0, 0, 0.15) 0px 8px 16px;
+    
+    .btns {
+        display: flex;
+        padding: 5px 10px 0px;
+        font-size: 12px;
+        
+        .close, .clear {
+            flex-grow: 1;
+            align-self: center;
+            text-align: center;
+            cursor: pointer;
+            padding:5px;
 
-.cover {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+            &:hover {
+                background-color: #5A9BEF;
+                color: #FFFFFF;
+            }
+        }
+
+    }    
 }

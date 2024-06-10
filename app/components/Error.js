@@ -34,7 +34,8 @@ const Error = ({ error, runScrape, runAnalysis }) => {
                             {scrapeMessage !== '' && <p><br/></p>}
                             {chatgptMessage}
                             <br /><br />
-                            You can try again by clicking the "AI Analysis" button at the top of the page or by <span className={styles.link} onClick={handleClick}>clicking here.</span>. You can also <span className={styles.link} onClick={runAnalysis}>click here</span> to copy and send the result for debugging
+                            You can try again by clicking the "AI Analysis" button at the top of the page or by <span className={styles.link} onClick={handleClick}>clicking here.</span>.
+                            {/* You can also <span className={styles.link} onClick={runAnalysis}>click here</span> to copy and send the result for debugging */}
                         </div>
                     )}
                 </div>

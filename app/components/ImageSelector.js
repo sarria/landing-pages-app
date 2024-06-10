@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ImagePicker from 'react-image-picker'
+import ImagePicker from './ImagePicker'
 import styles from './imageSelector.module.scss'
 import '../utils/imagePicker.css'
 import MyModal from './Modal' // Import the custom Modal
@@ -21,16 +21,18 @@ export default function ImageSelector({ image, imageList, onChange, name, sectio
     }
 
     return (
-        <div>
-            <div className={styles.swatch} onClick={handleClick}>
-                <div className={styles.image} style={{ backgroundImage: `url(${image})` }} />
+        <div className={styles.root}>
+            <div className={styles.wrapper}>
+                <div className={styles.imageBox} onClick={handleClick}>
+                    <div className={styles.image} style={{ backgroundImage: `url(${image})` }} />
+                </div>
+                <MyModal isOpen={display} onRequestClose={handleClose} contentLabel="Image Editor" className={styles.modal}>
+                    <ImagePicker
+                        images={imageList.map((image, i) => ({ src: image, value: i }))}
+                        onPick={handleChange}
+                    />
+                </MyModal>
             </div>
-            <MyModal isOpen={display} onRequestClose={handleClose} contentLabel="Image Editor" className={styles.modal}>
-                <ImagePicker
-                    images={imageList.map((image, i) => ({ src: image, value: i }))}
-                    onPick={handleChange}
-                />
-            </MyModal>
         </div>
     )
 }
